@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stylish_dashboard/core/widgets/custom_button.dart';
+import 'package:stylish_dashboard/features/add_product/presentation/view/add_product_screen.dart';
 
 class DashboardViewBody extends StatelessWidget {
   const DashboardViewBody({super.key});
@@ -14,7 +15,9 @@ class DashboardViewBody extends StatelessWidget {
           MainButton(
             hasCircularBorder: true,
             text: 'Add Data',
-            onTap: (){},
+            onTap: () {
+              Navigator.pushNamed(context, AddProductScreen.routeName);
+            },
           )
         ],
       ),
