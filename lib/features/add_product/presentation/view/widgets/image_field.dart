@@ -39,8 +39,9 @@ class _ImageFieldState extends State<ImageField> {
               width: 200,
               height: 200,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Colors.grey)),
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: Colors.grey),
+              ),
               child: fileImage != null
                   ? ClipRRect(
                       borderRadius: BorderRadius.circular(10),

@@ -12,7 +12,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'Montserrat',
+        scaffoldBackgroundColor: const Color(0xFFFFFFFF),
+        /*colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFFFFFFFF),
+        ),*/
+      ),
       debugShowCheckedModeBanner: false,
       title: 'Stylish Dashboard',
       initialRoute: DashboardScreen.routeName,
