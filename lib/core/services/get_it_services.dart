@@ -1,0 +1,20 @@
+import 'package:get_it/get_it.dart';
+import 'package:stylish_dashboard/core/repos/images_repo/images_repo.dart';
+import 'package:stylish_dashboard/core/repos/images_repo/images_repo_imp.dart';
+import 'package:stylish_dashboard/core/repos/products_repo/products_repo.dart';
+import 'package:stylish_dashboard/core/repos/products_repo/products_repo_imp.dart';
+import 'package:stylish_dashboard/core/services/database_service.dart';
+import 'package:stylish_dashboard/core/services/fire_storage.dart';
+import 'package:stylish_dashboard/core/services/firestore_service.dart';
+import 'package:stylish_dashboard/core/services/storage_service.dart';
+
+final getIt = GetIt.instance;
+
+void setupGetIt() {
+  getIt.registerSingleton<StorageService>(FireStorage());
+  getIt.registerSingleton<DatabaseService>(FirestoreService());
+  getIt.registerSingleton<ImagesRepo>(
+      ImagesRepoImp(storageService: getIt<StorageService>()));
+  getIt.registerSingleton<ProductsRepo>(
+      ProductsRepoImp(databaseService: getIt<DatabaseService>()));
+}
