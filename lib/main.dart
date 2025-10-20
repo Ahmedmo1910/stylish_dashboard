@@ -5,7 +5,7 @@ import 'package:stylish_dashboard/core/helper_functions/on_generate_routes.dart'
 import 'package:stylish_dashboard/core/services/custom_bloc_observer.dart';
 import 'package:stylish_dashboard/core/services/get_it_services.dart';
 import 'package:stylish_dashboard/core/services/shared_preferences_singleton.dart';
-import 'package:stylish_dashboard/features/auth/presentation/views/signin_screen.dart';
+import 'package:stylish_dashboard/features/splash/presentation/views/splash_screen.dart';
 import 'package:stylish_dashboard/firebase_options.dart';
 
 void main() async {
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       title: 'Stylish Dashboard',
-      initialRoute: SigninScreen.routeName,
+      initialRoute: SplashScreen.routeName,
       onGenerateRoute: onGenerateRoute,
     );
   }
