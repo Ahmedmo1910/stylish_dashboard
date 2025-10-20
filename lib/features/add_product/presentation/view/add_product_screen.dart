@@ -5,7 +5,7 @@ import 'package:stylish_dashboard/core/repos/products_repo/products_repo.dart';
 import 'package:stylish_dashboard/core/services/get_it_services.dart';
 import 'package:stylish_dashboard/core/widgets/build_app_bar.dart';
 import 'package:stylish_dashboard/features/add_product/presentation/manager/cubit/add_product_cubit_cubit.dart';
-import 'package:stylish_dashboard/features/add_product/presentation/view/widgets/add_product_view_body.dart';
+import 'package:stylish_dashboard/features/add_product/presentation/view/widgets/add_product_view_body_bloc_consumer.dart';
 
 class AddProductScreen extends StatelessWidget {
   const AddProductScreen({super.key});
@@ -17,7 +17,7 @@ class AddProductScreen extends StatelessWidget {
       body: BlocProvider(
           create: (context) => AddProductCubit(
               getIt.get<ImagesRepo>(), getIt.get<ProductsRepo>()),
-          child: const AddProductViewBody()),
+          child:const AddProductViewBodyBlocConsumer()),
     );
   }
 }

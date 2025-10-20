@@ -18,7 +18,10 @@ void setupGetIt() {
   getIt.registerSingleton<StorageService>(FireStorage());
   getIt.registerSingleton<DatabaseService>(FirestoreService());
   getIt.registerSingleton<ImagesRepo>(
-      ImagesRepoImp(storageService: getIt<StorageService>()));
+    ImagesRepoImp(
+        storageService: getIt<StorageService>(),
+        fireBaseAuthService: getIt<FireBaseAuthService>()),
+  );
   getIt.registerSingleton<ProductsRepo>(
       ProductsRepoImp(databaseService: getIt<DatabaseService>()));
   getIt.registerSingleton<AuthRepo>(

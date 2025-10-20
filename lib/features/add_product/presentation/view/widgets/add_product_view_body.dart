@@ -87,8 +87,10 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                           price: price,
                           code: code,
                           description: description,
-                          imageFile: image!);
+                          imageFile: image!,
+                          reviews: []);
                       context.read<AddProductCubit>().addProduct(input);
+                      _formKey.currentState!.reset();
                     } else {
                       autovalidateMode = AutovalidateMode.always;
                       setState(() {});
