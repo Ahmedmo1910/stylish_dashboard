@@ -73,32 +73,34 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                   ),
                 ],
               ),
-              const SizedBox(height: 32),
-              MainButton(
-                text: 'Add Product',
-                hasCircularBorder: true,
-                onTap: () {
-                  if (image != null) {
-                    if (_formKey.currentState!.validate()) {
-                      _formKey.currentState!.save();
-                      AddProductInputEntity input = AddProductInputEntity(
-                          name: name,
-                          category: category,
-                          price: price,
-                          code: code,
-                          description: description,
-                          imageFile: image!,
-                          reviews: []);
-                      context.read<AddProductCubit>().addProduct(input);
-                      _formKey.currentState!.reset();
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                child: MainButton(
+                  text: 'Add Product',
+                  hasCircularBorder: true,
+                  onTap: () {
+                    if (image != null) {
+                      if (_formKey.currentState!.validate()) {
+                        _formKey.currentState!.save();
+                        AddProductInputEntity input = AddProductInputEntity(
+                            name: name,
+                            category: category,
+                            price: price,
+                            code: code,
+                            description: description,
+                            imageFile: image!,
+                            reviews: []);
+                        context.read<AddProductCubit>().addProduct(input);
+                        _formKey.currentState!.reset();
+                      } else {
+                        autovalidateMode = AutovalidateMode.always;
+                        setState(() {});
+                      }
                     } else {
-                      autovalidateMode = AutovalidateMode.always;
-                      setState(() {});
+                      showError(context, 'Please select an image');
                     }
-                  } else {
-                    showError(context, 'Please select an image');
-                  }
-                },
+                  },
+                ),
               ),
             ],
           ),

@@ -8,6 +8,7 @@ class AddProductInputModel {
   final num price;
   final String code;
   final String description;
+  final int sellingCount;
   String? imageUrl;
   final File imageFile;
   final num avgRating;
@@ -20,6 +21,7 @@ class AddProductInputModel {
     required this.price,
     required this.code,
     required this.description,
+     this.sellingCount = 0,
     this.imageUrl,
     required this.imageFile,
     required this.reviews,
@@ -47,6 +49,7 @@ class AddProductInputModel {
       'price': price,
       'code': code,
       'description': description,
+      'sellingCount': sellingCount,
       'imageUrl': imageUrl,
       'reviews': reviews
     };

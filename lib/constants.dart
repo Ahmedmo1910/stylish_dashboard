@@ -1,0 +1,2 @@
+const supabaseUrl ='https://uknqatsyvlbgovckxnov.supabase.co';
+const supabaseKey ='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVrbnFhdHN5dmxiZ292Y2t4bm92Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2MTE0ODA1MSwiZXhwIjoyMDc2NzI0MDUxfQ.eptvlevEpHSeJ5iMEraWQb_zx-WjhIlfj-6kjH-Xe8I';
